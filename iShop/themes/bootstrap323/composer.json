@@ -1,0 +1,17 @@
+{
+    "name": "silverstripe/bootstrap-base",
+    "description": "The SilverStripe bootstrap base theme",
+    "type": "silverstripe-theme",
+    "keywords": ["silverstripe", "theme"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Robin Gorry)",
+            "homepage": "http://www.sitetools.co.nz"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/framework": ">=3.0"
+    }
+}

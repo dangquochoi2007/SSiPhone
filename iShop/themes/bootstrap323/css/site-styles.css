@@ -1,0 +1,67 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer {
+    color: #999;
+    background: #ededed;
+    padding: 20px 0;
+    font-size: 11px;
+    line-height: 22px;
+}
+.footer a {
+    color: #999;
+}
+.footer a:hover {
+    color: #B90000;
+}
+.footer .left {
+    float: left;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+.footer .right {
+    float: right;
+    display: block;
+    margin-bottom: 10px;
+}
+.footer span {
+    padding: 0 3px;
+    color: #bbb;
+}
+.footer .primary,
+.footer .primary ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+        .footer .primary li {
+            display: inline;
+        }
+.ie6 .footer .primary li,
+.ie7 .footer .primary li { /* this is a bugfix for ie6/7 */
+    display: inline;
+    zoom: 1;
+    margin-right: 10px;
+}
+.footer .primary li:after { /* adds '/' to separate the footer navigation items */
+    padding: 0 3px 0 5px;
+    content: '/';
+    color: #999;
+}
+.footer .primary li:last-child:after {
+    content: ''; /* makes sure last nav item doesn't have a '/' following it */
+}
+.footer .arrow {
+    padding: 0 8px 0 5px;
+    color: #b80000;
+    font-size: 13px;
+}
+.footer .primary .nav-open-button {
+    display: none; /* the footer includes the primary nav include - this makes sure the nav open close button doesn't show up */
+}
