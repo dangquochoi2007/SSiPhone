@@ -1,4 +1,5 @@
 ### SILVERSTRIPE START ###
+
 # Deny access to templates (but allow from localhost)
 <Files *.ss>
 	Order deny,allow
@@ -13,7 +14,7 @@
 </Files>
 
 # Deny access to YAML configuration files which might include sensitive information
-<Files *.yml>
+<Files ~ "\.ya?ml$">
 	Order allow,deny
 	Deny from all
 </Files>
@@ -25,9 +26,6 @@ ErrorDocument 500 /assets/error-500.html
 <IfModule mod_rewrite.c>
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
-	RewriteBase '/'
-
-	
 
 	# Deny access to potentially sensitive files and folders
 	RewriteRule ^vendor(/|$) - [F,L,NC]
@@ -39,5 +37,11 @@ ErrorDocument 500 /assets/error-500.html
 	RewriteCond %{REQUEST_URI} ^(.*)$
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule .* framework/main.php?url=%1 [QSA]
+	
+	# If framework isn't in a subdirectory, rewrite to installer
+	RewriteCond %{REQUEST_URI} ^(.*)/framework/main.php$
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule . %1/install.php? [R,L]
+
 </IfModule>
 ### SILVERSTRIPE END ###
